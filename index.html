@@ -4,7 +4,7 @@
 
 <head>
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#8b2d00">
+    <meta name="theme-color" content="#FFCC00">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -211,7 +211,11 @@
 
     <script>
         if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("/service-worker.js")
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("/sw.js")
+                    .then((reg) => console.log("Service Worker registrado:", reg))
+                    .catch((err) => console.log("Erro no Service Worker:", err));
+            });
         }
     </script>
 </body>
