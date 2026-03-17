@@ -1,33 +1,108 @@
-document.addEventListener("DOMContentLoaded", () => {
+const checkboxes = document.querySelectorAll("input[type='checkbox']")
 
-    const checkboxes = document.querySelectorAll("input[type='checkbox']");
-    const progressBar = document.getElementById("progress-bar");
-    const progressText = document.getElementById("progress-text");
+checkboxes.forEach((box,index)=>{
 
-    checkboxes.forEach(cb => {
-        const saved = localStorage.getItem(cb.id);
-        if (saved === "true") {
-            cb.checked = true;
-        }
+const saved = localStorage.getItem("satchel_checkbox_"+index)
 
-        cb.addEventListener("change", () => {
-            localStorage.setItem(cb.id, cb.checked);
-            updateProgress();
-        });
-    });
+if(saved==="true"){
+box.checked=true
+}
 
-    function updateProgress() {
-        const total = checkboxes.length;
-        const checked = document.querySelectorAll("input[type='checkbox']:checked").length;
+box.addEventListener("change",()=>{
 
-        const percent = total === 0 ? 0 : (checked / total) * 100;
+localStorage.setItem("satchel_checkbox_"+index,box.checked)
 
-        if (progressBar) progressBar.style.width = percent + "%";
-        if (progressText) {
-            progressText.textContent = `${checked} / ${total} (${percent.toFixed(0)}%)`;
-        }
-    }
+updateProgress()
 
-    updateProgress();
+checkLegendUnlock()
 
-});
+})
+
+})
+
+
+function updateProgress(){
+
+const boxes = document.querySelectorAll("input[type='checkbox']")
+const total = boxes.length
+
+let checked = 0
+
+boxes.forEach(box=>{
+if(box.checked) checked++
+})
+
+const percent = (checked/total)*100
+
+const bar = document.getElementById("progressFill")
+
+bar.style.width = percent+"%"
+
+document.getElementById("progressText").innerText =
+checked+" / "+total+" materials"
+
+bar.classList.remove("progressEarly","progressMid","progressDone")
+
+if(checked < 18){
+bar.classList.add("progressEarly")
+}
+
+else if(checked < 21){
+bar.classList.add("progressMid")
+}
+
+else{
+bar.classList.add("progressDone")
+}
+
+}
+
+
+
+function checkLegendUnlock(){
+
+const otherBoxes = document.querySelectorAll(
+".satchel:not(.legend) input[type='checkbox']"
+)
+
+let allDone = true
+
+otherBoxes.forEach(box=>{
+if(!box.checked){
+allDone=false
+}
+})
+
+const legendBoxes = document.querySelectorAll(".legendBox")
+
+legendBoxes.forEach(box=>{
+box.disabled = !allDone
+})
+
+if(allDone){
+
+document.getElementById("legendMessage").innerText =
+"Legend of the East unlocked!"
+
+}else{
+
+document.getElementById("legendMessage").innerText =
+"Craft all other satchels to unlock."
+
+}
+
+}
+
+
+
+document.getElementById("resetProgress").addEventListener("click",()=>{
+
+localStorage.clear()
+
+location.reload()
+
+})
+
+
+updateProgress()
+checkLegendUnlock()

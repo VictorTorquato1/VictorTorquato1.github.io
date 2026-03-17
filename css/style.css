@@ -1,705 +1,283 @@
-body {
-    background: #0f0f0f;
-    color: white;
-    font-family: Arial;
-    margin: 0;
+body{
+background:#0f0f0f;
+color:white;
+font-family:Arial;
+margin:0;
 }
 
-header {
-    background: #1b1b1b;
-    padding: 20px;
-    text-align: center;
+header{
+background:#1b1b1b;
+padding:20px;
+text-align:center;
 }
 
-main {
-    max-width: 900px;
-    margin: auto;
+main{
+max-width:900px;
+margin:auto;
 }
 
-.satchel {
-    background: #1c1c1c;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    transition: 0.3s;
+.satchel{
+background:#1c1c1c;
+padding:20px;
+margin:20px;
+border-radius:10px;
+transition:0.3s;
 }
 
-.satchel:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+.satchel:hover{
+transform:scale(1.02);
+box-shadow:0 0 20px rgba(0,0,0,0.7);
 }
 
-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 8px 0;
+label{
+display:flex;
+align-items:center;
+gap:10px;
+margin:8px 0;
 }
 
-input[type="checkbox"] {
+input[type="checkbox"]{
 
-    appearance: none;
+appearance:none;
 
-    width: 32px;
-    height: 32px;
+width:32px;
+height:32px;
 
-    border-radius: 8px;
+border-radius:8px;
 
-    border: 2px solid rgba(255, 255, 255, 0.25);
+border:2px solid rgba(255,255,255,0.25);
 
-    cursor: pointer;
+cursor:pointer;
 
-    background-size: 20px;
-    background-position: center;
-    background-repeat: no-repeat;
+background-size:20px;
+background-position:center;
+background-repeat:no-repeat;
 
-    background-size: 300% 300%;
+background-size:300% 300%;
 
-    animation: gradientMove 5s linear infinite;
+animation:gradientMove 5s linear infinite;
 
-    position: relative;
+position:relative;
 
-    transition: 0.25s;
-
-}
-
-@keyframes gradientMove {
-
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+transition:0.25s;
 
 }
 
-input:checked {
+@keyframes gradientMove{
 
-    transform: scale(1.15);
-
-    box-shadow:
-
-        0 0 8px rgba(255, 150, 0, 0.9),
-        0 0 20px rgba(255, 120, 0, 0.7),
-        0 0 35px rgba(255, 80, 0, 0.5);
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 
 }
 
-input:checked::after {
+input:checked{
 
-    content: "✔";
+transform:scale(1.15);
 
-    color: white;
+box-shadow:
 
-    position: absolute;
-
-    top: 3px;
-    left: 7px;
+0 0 8px rgba(255,150,0,0.9),
+0 0 20px rgba(255,120,0,0.7),
+0 0 35px rgba(255,80,0,0.5);
 
 }
 
-.legend input:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-    filter: grayscale(1);
+input:checked::after{
+
+content:"✔";
+
+color:white;
+
+position:absolute;
+
+top:3px;
+left:7px;
+
+}
+
+.legend input:disabled{
+opacity:0.3;
+cursor:not-allowed;
+filter:grayscale(1);
 }
 
 
 /* ICON + GRADIENTS */
 
-.tonic input {
-    background-image:
-        linear-gradient(45deg, #a8e6ff, #3da5d9, #0d3b66),
-        url("../assets/icons/tonic.png");
+.tonic input{
+background-image:
+linear-gradient(45deg,#0D3B66,#3DA5D9,#A8E6FF),
+url("../assets/icons/tonic.png");
 }
 
-.provisions input {
-    background-image:
-        linear-gradient(45deg, #e6c79c, #c68642, #7a4a2a),
-        url("../assets/icons/provisions.png");
+.provisions input{
+background-image:
+linear-gradient(45deg,#7A4A2A,#C68642,#E6C79C),
+url("../assets/icons/provisions.png");
 }
 
-.materials input {
-    background-image:
-        linear-gradient(45deg, #bcaaa4, #795548, #3e2723),
-        url("../assets/icons/materials.png");
+.materials input{
+background-image:
+linear-gradient(45deg,#3E2723,#795548,#BCAAA4),
+url("../assets/icons/materials.png");
 }
 
-.ingredients input {
-    background-image:
-        linear-gradient(45deg, #a5d6a7, #43a047, #1b5e20),
-        url("../assets/icons/ingredients.png");
+.ingredients input{
+background-image:
+linear-gradient(45deg,#1B5E20,#43A047,#A5D6A7),
+url("../assets/icons/ingredients.png");
 }
 
-.valuables input {
-    background-image:
-        linear-gradient(45deg, #fff2a8, #ffd700, #b8860b),
-        url("../assets/icons/valuables.png");
+.valuables input{
+background-image:
+linear-gradient(45deg,#B8860B,#FFD700,#FFF2A8),
+url("../assets/icons/valuables.png");
 }
 
-.kit input {
-    background-image:
-        linear-gradient(45deg, #fff2a8, #ffd700, #b8860b),
-        url("../assets/icons/kit.png");
+.kit input{
+background-image:
+linear-gradient(45deg,#263238,#546E7A,#B0BEC5),
+url("../assets/icons/kit.png");
 }
 
-.legend input {
-    background-image:
-        linear-gradient(45deg, #8a5a00, #e0c068, #f5f5f5),
-        url("../assets/icons/legend.png");
+.legend input{
+background-image:
+linear-gradient(45deg,#F5F5F5,#E0C068,#8A5A00),
+url("../assets/icons/legend.png");
 }
 
 
 /* PROGRESS BAR */
 
-.progressContainer {
-    margin-top: 10px;
+.progressContainer{
+margin-top:10px;
 }
 
-.progressBar {
-    height: 10px;
-    background: #333;
-    border-radius: 5px;
-    overflow: hidden;
+.progressBar{
+height:10px;
+background:#333;
+border-radius:5px;
+overflow:hidden;
 }
 
-#progressFill {
-    height: 100%;
-    width: 0%;
-    background-size: 300% 300%;
-    animation: gradientMove 6s linear infinite;
-    transition: 0.6s;
+#progressFill{
+height:100%;
+width:0%;
+background-size:300% 300%;
+animation:gradientMove 6s linear infinite;
+transition:0.6s;
 }
 
-.progressEarly {
-    background: linear-gradient(90deg, #ff2d2d, #ff9900, #ff2d2d);
+.progressEarly{
+background:linear-gradient(90deg,#ff2d2d,#ff9900,#ff2d2d);
 }
 
-.progressMid {
-    background: linear-gradient(90deg, #ff8800, #ffd000, #00ff7f);
+.progressMid{
+background:linear-gradient(90deg,#ff8800,#ffd000,#00ff7f);
 }
 
-.progressDone {
-    background: linear-gradient(90deg, #00ff7f, #00cc66, #00ff7f);
+.progressDone{
+background:linear-gradient(90deg,#00ff7f,#00cc66,#00ff7f);
 }
 
-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    background: linear-gradient(45deg, #ff0000, #ff8800);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.2s;
+button{
+margin-top:10px;
+padding:10px 20px;
+border:none;
+border-radius:6px;
+background:linear-gradient(45deg,#ff0000,#ff8800);
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:0.2s;
 }
 
-button:hover {
-    transform: scale(1.05);
+button:hover{
+transform:scale(1.05);
 }
 
-.satchel h2 {
+.satchel h2{
 
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-}
-
-.tonic h2::before {
-
-    content: "";
-    width: 28px;
-    height: 28px;
-    background: url("../assets/icons/tonics.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+display:flex;
+align-items:center;
+gap:10px;
 
 }
 
-.provisions h2::before {
+.tonic h2::before{
 
-    content: "";
-    width: 28px;
-    height: 28px;
-    background: url("../assets/icons/provisions.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-
-}
-
-.materials h2::before {
-
-    content: "";
-    width: 28px;
-    height: 28px;
-    background: url("../assets/icons/materials.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+content:"";
+width:28px;
+height:28px;
+background:url("../assets/icons/tonics.png");
+background-size:contain;
+background-repeat:no-repeat;
 
 }
 
-.ingredients h2::before {
+.provisions h2::before{
 
-    content: "";
-    width: 28px;
-    height: 28px;
-    background: url("../assets/icons/ingredients.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-
-}
-
-.valuables h2::before {
-
-    content: "";
-    width: 28px;
-    height: 28px;
-    background: url("../assets/icons/valuables.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+content:"";
+width:28px;
+height:28px;
+background:url("../assets/icons/provisions.png");
+background-size:contain;
+background-repeat:no-repeat;
 
 }
 
-.kit h2::before {
+.materials h2::before{
 
-    content: "";
-    width: 28px;
-    height: 28px;
-    background: url("../assets/icons/kit.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-
-}
-
-.legend h2::before {
-
-    content: "";
-    width: 28px;
-    height: 28px;
-    background: url("../assets/icons/legend.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+content:"";
+width:28px;
+height:28px;
+background:url("../assets/icons/materials.png");
+background-size:contain;
+background-repeat:no-repeat;
 
 }
 
-/* RESET */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f0f0f;
-    color: white;
+.ingredients h2::before{
+
+content:"";
+width:28px;
+height:28px;
+background:url("../assets/icons/ingredients.png");
+background-size:contain;
+background-repeat:no-repeat;
+
 }
 
-/* NAVBAR */
-.nav-bar {
-    display: flex;
-    justify-content: space-around;
-    background: #1a1a1a;
-    padding: 12px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.valuables h2::before{
+
+content:"";
+width:28px;
+height:28px;
+background:url("../assets/icons/valuables.png");
+background-size:contain;
+background-repeat:no-repeat;
+
 }
 
-.nav-bar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+.kit h2::before{
+
+content:"";
+width:28px;
+height:28px;
+background:url("../assets/icons/kit.png");
+background-size:contain;
+background-repeat:no-repeat;
+
 }
 
-.nav-bar a:hover {
-    color: #ff7b00;
-}
+.legend h2::before{
 
-/* PROGRESSO */
-.progress-container {
-    width: 100%;
-    height: 8px;
-    background: #222;
-}
+content:"";
+width:28px;
+height:28px;
+background:url("../assets/icons/legend.png");
+background-size:contain;
+background-repeat:no-repeat;
 
-#progress-bar {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, #ff0000, #ff7b00, #ffd000);
-    transition: width 0.3s;
-}
-
-#progress-text {
-    text-align: center;
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-/* ITENS */
-.item {
-    display: block;
-    margin: 10px;
-    padding: 12px;
-    border-radius: 10px;
-    background: #1a1a1a;
-    cursor: pointer;
-    transition: 0.3s;
-    position: relative;
-    overflow: hidden;
-}
-
-/* CHECKBOX */
-.item input {
-    margin-right: 10px;
-}
-
-/* GRADIENTE ANIMADO BASE */
-
-.item * {
-    position: relative;
-    z-index: 1;
-}
-
-/* ANIMAÇÃO */
-@keyframes gradientMove {
-    0% { background-position: 0% }
-    50% { background-position: 100% }
-    100% { background-position: 0% }
-}
-
-/* VARIAÇÕES POR ANIMAL */
-
-/* Alligator */
-.item.alligator::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #5a6b3c, #3e4e2c, #1f2a1f);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Ram */
-.item.ram::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #d2b48c, #a67b5b, #5c4033);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Cougar */
-.item.cougar::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #c68642, #8b5a2b, #3e2723);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Boar */
-.item.boar::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #6b4f3a, #4a3628, #1f1a17);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Ox */
-.item.ox::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #c2a178, #8b6f47, #4e3b2b);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Pronghorn */
-.item.pronghorn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #e6c79c, #c19a6b, #7a5c3e);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Moose */
-.item.moose::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #5a4a3f, #3b2f27, #1c1a18);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Wolf */
-.item.wolf::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #8a8f94, #4b4f54, #1c1f23);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Snake */
-.item.snake::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #6b7d3a, #4e5a2f, #2a2f1f);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Bmf */
-.item.bmf::before {
-    background: linear-gradient(270deg, #c46a2d, #7a5c3e, #3b2f2a);
-}
-
-/* Cow */
-.item.cow::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #f2e1c2, #a67b5b, #2f241b);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Goat */
-.item.goat::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #e6d3b3, #bfa27a, #6e5a4a);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Elk */
-.item.elk::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #c68642, #8b5a2b, #4e3423);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Buck */
-.item.buck::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #d2a679, #a67b5b, #5c4033);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Vintage */
-.item.civil::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #3e5f81, #7e573c, #773838);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Golden */
-.item.golden::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #58564a, #85743e, #cf9610);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Tooth */
-.item.alligatort::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #887a42, #6b853e, #90ca12);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Silver */
-.item.silver::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #e5e5e5, #b0b0b0, #5c5c5c);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Quartz */
-.item.quartz::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #f5f5f5, #e0e0e0, #bdbdbd);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Bear */
-.item.bearc::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #867141, #885f41, #441d05);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Abalone */
-.item.abalone::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #d8e6e9, #a7c3c8, #7a9a9d);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Earring */
-.item.earring::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #f0f0f0, #bfc0c0, #6e6e6e);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Bison */
-.item.bison::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #e6d3b3, #8b5e3c, #3f2a1f);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Gold Earring */
-.item.gearring::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #ffd700, #c9a227, #8c6b1f);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Wood */
-.item.wood::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #bfbfcf, #39336d, #030449);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* Boar */
-.item.tusk::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(270deg, #f0e6c8, #c8a87f, #5a3f2b);
-    background-size: 600% 600%;
-    opacity: 0.15;
-    animation: gradientMove 6s ease infinite;
-    z-index: 0;
-}
-
-/* EFEITO CHECKED */
-.item input:checked + * {
-    text-decoration: line-through;
-    opacity: 0.6;
-}
-
-/* MAPA */
-#map {
-    width: 100%;
-    height: 80vh;
-    margin-top: 10px;
-    border-radius: 10px;
-}
-
-/* TÍTULOS */
-h1 {
-    text-align: center;
-    margin-top: 15px;
-}
-
-h2 {
-    margin-left: 10px;
-    margin-top: 20px;
 }
