@@ -10,13 +10,25 @@
 
     <title>RDR2 Satchel Tracker</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=1">
 
 </head>
 
-<body>
+<body data-page="satchel">
 
     <header>
+
+        <div class="nav-buttons">
+
+            <form action="./index.html">
+                <button type="submit">Satchels</button>
+            </form>
+
+            <form action="./trinket.html">
+                <button type="submit">Talismans & Trinkets</button>
+            </form>
+
+        </div>
 
         <h1>Satchel Craft Tracker</h1>
 
@@ -48,17 +60,17 @@
             <h2>Tonic Satchel</h2>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_deer">
                 <span>Perfect Deer Pelt</span>
             </label>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_buck">
                 <span>Perfect Buck Pelt</span>
             </label>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_elk">
                 <span>Perfect Elk Pelt</span>
             </label>
 
@@ -69,17 +81,17 @@
             <h2>Provisions Satchel</h2>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_provisions_deer">
                 <span>Perfect Deer Pelt</span>
             </label>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_provisions_bison">
                 <span>Perfect Bison Pelt</span>
             </label>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_provisions_raccoon">
                 <span>Perfect Raccoon Pelt</span>
             </label>
 
@@ -92,17 +104,17 @@
             <h2>Materials Satchel</h2>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_materials_deer">
                 <span>Perfect Deer Pelt</span>
             </label>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_materials_boar">
                 <span>Perfect Boar Pelt</span>
             </label>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_materials_iguana">
                 <span>Perfect Iguana Pelt</span>
             </label>
 
@@ -115,17 +127,17 @@
             <h2>Ingredients Satchel</h2>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_ingredients_deer">
                 <span>Perfect Deer Pelt</span>
             </label>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_ingredients_badger">
                 <span>Perfect Badger Pelt</span>
             </label>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_ingredients_squirrel">
                 <span>Perfect Squirrel Pelt</span>
             </label>
 
@@ -138,17 +150,17 @@
             <h2>Valuables Satchel</h2>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_valuables_deer">
                 <span>Perfect Deer Pelt</span>
             </label>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_valuables_beaver">
                 <span>Perfect Beaver Pelt</span>
             </label>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_valuables_rabbit">
                 <span>Perfect Rabbit Pelt</span>
             </label>
 
@@ -161,17 +173,17 @@
             <h2>Kit Satchel</h2>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_kit_deer">
                 <span>Perfect Deer Pelt</span>
             </label>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_kit_elk">
                 <span>Perfect Elk Pelt</span>
             </label>
 
             <label>
-                <input type="checkbox">
+                <input type="checkbox" data-id="satchel_kit_panther">
                 <span>Perfect Panther Pelt</span>
             </label>
 
@@ -188,17 +200,17 @@
             </p>
 
             <label>
-                <input type="checkbox" class="legendBox">
+                <input type="checkbox" class="legendBox" data-id="satchel_legend_deer">
                 <span>Perfect Deer Pelt</span>
             </label>
 
             <label>
-                <input type="checkbox" class="legendBox">
+                <input type="checkbox" class="legendBox" data-id="satchel_legend_cougar">
                 <span>Perfect Cougar Pelt</span>
             </label>
 
             <label>
-                <input type="checkbox" class="legendBox">
+                <input type="checkbox" class="legendBox" data-id="satchel_legend_wolf">
                 <span>Perfect Wolf Pelt</span>
             </label>
 
@@ -207,7 +219,7 @@
 
     </main>
 
-    <script src="js/script.js"></script>
+    <script src="js/script_satchel.js"></script>
 
     <script>
         if ("serviceWorker" in navigator) {

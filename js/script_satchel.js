@@ -24,12 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "progressText"
       );
 
-      updateProgressGeneric(
-        ".trinket input[type='checkbox']",
-        "trinketFill",
-        "trinketText"
-      );
-
       if (typeof checkLegendUnlock === "function") {
         checkLegendUnlock();
       }
@@ -43,12 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ".satchel input[type='checkbox']",
     "progressFill",
     "progressText"
-  );
-
-  updateProgressGeneric(
-    ".trinket input[type='checkbox']",
-    "trinketFill",
-    "trinketText"
   );
 
 });
@@ -136,19 +124,3 @@ document.getElementById("resetProgress").addEventListener("click", () => {
   location.reload()
 
 })
-
-
-updateProgressGeneric(
-  ".satchel input[type='checkbox']",
-  "progressFill",
-  "progressText"
-);
-checkLegendUnlock()
-
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js")
-      .then((reg) => console.log("Service Worker registrado:", reg))
-      .catch((err) => console.log("Erro no Service Worker:", err));
-  });
-}

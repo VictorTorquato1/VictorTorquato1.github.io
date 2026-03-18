@@ -2,15 +2,298 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=1">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talismans & Trinkets</title>
 </head>
 
-<body>
+<body data-page="trinket">
 
-    <script src="js/script.js"></script>
+    <header>
+
+        <div class="nav-buttons">
+
+            <form action="./index.html">
+                <button type="submit">Satchels</button>
+            </form>
+
+            <form action="./trinket.html">
+                <button type="submit">Talismans & Trinkets</button>
+            </form>
+
+        </div>
+
+        <h1>Talismans & Trinkets Tracker</h1>
+
+        <div class="progressContainer">
+
+            <div id="progressText"></div>
+
+            <div class="progressBar">
+                <div id="progressFill" class="progressEarly"></div>
+            </div>
+
+        </div>
+
+        <button id="resetProgress">Reset Progress</button>
+
+    </header>
+
+    <main>
+
+        <div class="satchel alligator">
+
+            <h2>Alligator Tooth Talisman</h2>
+
+            <label>
+                <input type="checkbox" data-id="trinket_handcuffs">
+                <span>Vintage Civil War Handcuffs</span>
+            </label>
+
+            <label>
+                <input type="checkbox" data-id="trinket_bracelet">
+                <span>Gold Jointed Bracelet</span>
+            </label>
+
+            <label>
+                <input type="checkbox" data-id="trinket_alligator">
+                <span>Legendary Alligator Tooth</span>
+            </label>
+
+        </div>
+
+        <div class="satchel bear">
+
+            <h2>Bear Claw Talisman</h2>
+
+            <label>
+                <input type="checkbox" data-id="silver_chain_bracelet">
+                <span>Silver Chain Bracelet</span>
+            </label>
+
+            <label>
+                <input type="checkbox" data-id="quartz_chunk">
+                <span>Quartz Chunk</span>
+            </label>
+
+            <label>
+                <input type="checkbox" data-id="bear_claw">
+                <span>Legendary Bear Claw</span>
+            </label>
+
+        </div>
+
+        <div class="satchel beaver">
+
+            <h2>Beaver Tooth Trinket</h2>
+
+            <label>
+                <input type="checkbox" data-id="legendary_beaver_tooth">
+                <span>Legendary Beaver Tooth</span>
+            </label>
+
+        </div>
+
+        <div class="satchel bison">
+
+            <h2>Tatanka Bison Horn Trinket</h2>
+
+            <label>
+                <input type="checkbox" data-id="legendary_tatanka_bison_horn">
+                <span>Legendary Tatanka Bison Horn</span>
+            </label>
+
+        </div>
+
+        <div class="satchel bisonhorn">
+
+            <h2>Bison Horn Talisman</h2>
+
+            <label>
+                <input type="checkbox" data-id="abalone_shell_fragment">
+                <span>Abalone Shell Fragment</span>
+            </label>
+
+            <label>
+                <input type="checkbox" data-id="silver_earring">
+                <span>Silver Earring</span>
+            </label>
+
+            <label>
+                <input type="checkbox" data-id="legendary_bison_horn">
+                <span>Legendary Bison Horn</span>
+            </label>
+
+        </div>
+
+        <div class="satchel boar">
+
+            <h2>Boar Tusk Talisman</h2>
+
+            <label>
+                <input type="checkbox" data-id="gold_earring">
+                <span>Gold Earring</span>
+            </label>
+
+            <label>
+                <input type="checkbox" data-id="cobalt_petrified_wood">
+                <span>Cobalt Petrified Wood</span>
+            </label>
+
+            <label>
+                <input type="checkbox" data-id="legendary_boar_tusk">
+                <span>Legendary Boar Tusk</span>
+            </label>
+
+        </div>
+
+        <div class="satchel buck">
+
+            <h2>Buck Antler Trinket</h2>
+
+            <label>
+                <input type="checkbox" data-id="legendary_buck_antler">
+                <span>Legendary Buck Antler</span>
+            </label>
+
+        </div>
+
+        <div class="satchel cougar">
+
+            <h2>Cougar Fang Trinket</h2>
+
+            <label>
+                <input type="checkbox" data-id="legendary_cougar_fang">
+                <span>Legendary Cougar Fang</span>
+            </label>
+
+        </div>
+
+        <div class="satchel coyote">
+
+            <h2>Coyote Fang Trinket</h2>
+
+            <label>
+                <input type="checkbox" data-id="legendary_coyote_fang">
+                <span>Legendary Coyote Fang</span>
+            </label>
+
+        </div>
+
+        <div class="satchel elk">
+
+            <h2>Elk Antler Trinket</h2>
+
+            <label>
+                <input type="checkbox" data-id="legendary_elk_antler">
+                <span>Legendary Elk Antler</span>
+            </label>
+
+        </div>
+
+        <div class="satchel fox">
+
+            <h2>Fox Claw Trinket</h2>
+
+            <label>
+                <input type="checkbox" data-id="legendary_fox_claw">
+                <span>Legendary Fox Claw</span>
+            </label>
+
+        </div>
+
+        <div class="satchel lion">
+
+            <h2>Lion's Paw Trinket</h2>
+
+            <label>
+                <input type="checkbox" data-id="lion_paw">
+                <span>Legendary Lion's Paw</span>
+            </label>
+
+        </div>
+
+        <div class="satchel moose">
+
+            <h2>Moose Antler Trinket</h2>
+
+            <label>
+                <input type="checkbox" data-id="legendary_moose_antler">
+                <span>Legendary Moose Antler</span>
+            </label>
+
+        </div>
+
+        <div class="satchel panther">
+
+            <h2>Panther's Eye Trinket</h2>
+
+            <label>
+                <input type="checkbox" data-id="legendary_panther_eye">
+                <span>Legendary Panther Eye</span>
+            </label>
+
+        </div>
+
+        <div class="satchel pronghorn">
+
+            <h2>Pronghorn Horn Trinket</h2>
+
+            <label>
+                <input type="checkbox" data-id="legendary_pronghorn_horn">
+                <span>Legendary Pronghorn Horn</span>
+            </label>
+
+        </div>
+
+        <div class="satchel ram">
+
+            <h2>Ram Horn Trinket</h2>
+
+            <label>
+                <input type="checkbox" data-id="legendary_ram_horn">
+                <span>Legendary Ram Horn</span>
+            </label>
+
+        </div>
+
+        <div class="satchel raven">
+
+            <h2>Raven Claw Talisman</h2>
+
+            <label>
+                <input type="checkbox" data-id="old_brass_compass">
+                <span>Old Brass Compass</span>
+            </label>
+
+        </div>
+
+        <div class="satchel wolf">
+
+            <h2>Wolf Heart Trinket</h2>
+
+            <label>
+                <input type="checkbox" data-id="legendary_wolf_heart">
+                <span>Legendary Wolf Heart</span>
+            </label>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/script_trinket.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("/sw.js")
+                    .then((reg) => console.log("Service Worker registrado:", reg))
+                    .catch((err) => console.log("Erro no Service Worker:", err));
+            });
+        }
+    </script>
 
 </body>
 

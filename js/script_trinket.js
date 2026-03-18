@@ -24,16 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "progressText"
       );
 
-      updateProgressGeneric(
-        ".trinket input[type='checkbox']",
-        "trinketFill",
-        "trinketText"
-      );
-
-      if (typeof checkLegendUnlock === "function") {
-        checkLegendUnlock();
-      }
-
     });
 
   });
@@ -43,12 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ".satchel input[type='checkbox']",
     "progressFill",
     "progressText"
-  );
-
-  updateProgressGeneric(
-    ".trinket input[type='checkbox']",
-    "trinketFill",
-    "trinketText"
   );
 
 });
@@ -93,42 +77,6 @@ function updateProgressGeneric(selector, barId, textId) {
 
 
 
-function checkLegendUnlock() {
-
-  const otherBoxes = document.querySelectorAll(
-    ".satchel:not(.legend) input[type='checkbox']"
-  )
-
-  let allDone = true
-
-  otherBoxes.forEach(box => {
-    if (!box.checked) {
-      allDone = false
-    }
-  })
-
-  const legendBoxes = document.querySelectorAll(".legendBox")
-
-  legendBoxes.forEach(box => {
-    box.disabled = !allDone
-  })
-
-  if (allDone) {
-
-    document.getElementById("legendMessage").innerText =
-      "Legend of the East unlocked!"
-
-  } else {
-
-    document.getElementById("legendMessage").innerText =
-      "Craft all other satchels to unlock."
-
-  }
-
-}
-
-
-
 document.getElementById("resetProgress").addEventListener("click", () => {
 
   localStorage.clear()
@@ -136,19 +84,3 @@ document.getElementById("resetProgress").addEventListener("click", () => {
   location.reload()
 
 })
-
-
-updateProgressGeneric(
-  ".satchel input[type='checkbox']",
-  "progressFill",
-  "progressText"
-);
-checkLegendUnlock()
-
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js")
-      .then((reg) => console.log("Service Worker registrado:", reg))
-      .catch((err) => console.log("Erro no Service Worker:", err));
-  });
-}

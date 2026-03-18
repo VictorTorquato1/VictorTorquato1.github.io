@@ -1,57 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
+const STORAGE_PREFIX = "trinket_";
 
-  const STORAGE_PREFIX = document.body.dataset.page || "_";
+const checkboxes = document.querySelectorAll("input[type='checkbox']")
 
-  const checkboxes = document.querySelectorAll("input[type='checkbox']");
+checkboxes.forEach((box, index) => {
 
-  checkboxes.forEach((box, index) => {
+  const saved = localStorage.getItem(STORAGE_PREFIX + "checkbox_" + index)
 
-    const key = STORAGE_PREFIX + box.dataset.id;
+  if (saved === "true") {
+    box.checked = true
+  }
 
-    const saved = localStorage.getItem(key);
+  box.addEventListener("change", () => {
 
-    if (saved === "true") {
-      box.checked = true;
-    }
+    localStorage.setItem(STORAGE_PREFIX + "checkbox_" + index, box.checked)
 
-    box.addEventListener("change", () => {
+    updateProgress()
 
-      localStorage.setItem(key, box.checked);
+    checkLegendUnlock()
 
-      updateProgressGeneric(
-        ".satchel input[type='checkbox']",
-        "progressFill",
-        "progressText"
-      );
+  })
 
-      updateProgressGeneric(
-        ".trinket input[type='checkbox']",
-        "trinketFill",
-        "trinketText"
-      );
-
-      if (typeof checkLegendUnlock === "function") {
-        checkLegendUnlock();
-      }
-
-    });
-
-  });
-
-  // roda ao carregar
-  updateProgressGeneric(
-    ".satchel input[type='checkbox']",
-    "progressFill",
-    "progressText"
-  );
-
-  updateProgressGeneric(
-    ".trinket input[type='checkbox']",
-    "trinketFill",
-    "trinketText"
-  );
-
-});
+})
 
 
 function updateProgressGeneric(selector, barId, textId) {
@@ -127,7 +96,45 @@ function checkLegendUnlock() {
 
 }
 
+document.addEventListener("DOMContentLoaded", () => {
 
+  const checkboxes = document.querySelectorAll("input[type='checkbox']");
+
+  checkboxes.forEach((box,index)=>{
+
+    const saved = localStorage.getItem(STORAGE_PREFIX + "checkbox_" + index);
+
+    if(saved==="true"){
+      box.checked=true;
+    }
+
+    box.addEventListener("change",()=>{
+
+      localStorage.setItem(STORAGE_PREFIX + "checkbox_" + index, box.checked);
+
+      updateProgressGeneric(
+        ".trinket input[type='checkbox']",
+        "trinketFill",
+        "trinketText"
+      );
+
+    });
+
+  });
+
+  updateProgressGeneric(
+    ".trinket input[type='checkbox']",
+    "trinketFill",
+    "trinketText"
+  );
+
+});
+
+  updateProgress();
+
+  if (typeof checkLegendUnlock === "function") {
+    checkLegendUnlock();
+  }
 
 document.getElementById("resetProgress").addEventListener("click", () => {
 
@@ -143,7 +150,12 @@ updateProgressGeneric(
   "progressFill",
   "progressText"
 );
-checkLegendUnlock()
+
+updateProgressGeneric(
+  ".trinket input[type='checkbox']",
+  "trinketFill",
+  "trinketText"
+);
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
