@@ -1,3 +1,35 @@
+body {
+  margin: 0;
+  padding-top: 70px; /* espaço pra topbar */
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #8B0000, #FF4500); /* estilo RDR2 */
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.topbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin-left: 20px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
 body{
 background:#0f0f0f;
 color:white;
